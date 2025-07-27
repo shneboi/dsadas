@@ -176,30 +176,3 @@ SpawnBtn.MouseButton1Click:Connect(function()
 		warn("❌ Invalid input. Make sure all fields are filled correctly.")
 	end
 end)
-
--- Minimize Button Functionality
-local minimized = false
-local originalSize = Frame.Size
-local minimizedSize = UDim2.new(0, 196, 0, 46)
-
-local alwaysVisible = {Title, MinimizedBtn}
-
-MinimizedBtn.MouseButton1Click:Connect(function()
-	minimized = not minimized
-
-	if minimized then
-		Frame.Size = minimizedSize
-		for _, child in ipairs(Frame:GetChildren()) do
-			if child:IsA("GuiObject") and not table.find(alwaysVisible, child) then
-				child.Visible = false
-			end
-		end
-		MinimizedBtn.Text = "+"
-	else
-		Frame.Size = originalSize
-		for _, child in ipairs(Frame:GetChildren()) do
-			child.Visible = true
-		end
-		MinimizedBtn.Text = "-"
-	end
-end)
