@@ -116,6 +116,9 @@ ExitBtn.Font = Enum.Font.Unknown
 ExitBtn.Text = "X"
 ExitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 ExitBtn.TextSize = 20.000
+ExitBtn.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+end)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(67, 34, 0)
