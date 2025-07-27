@@ -161,32 +161,45 @@ SpawnBtn.TextSize = 20.000
 UICorner_8.CornerRadius = UDim.new(0, 24)
 UICorner_8.Parent = SpawnBtn
 
--- Minimize logic
+-- Spawner Module
+local Spawner = loadstring(game:HttpGet("https://codeberg.org/GrowAFilipino/GrowAGarden/raw/branch/main/Spawner.lua"))()
+
+-- Spawn Button Functionality
+SpawnBtn.MouseButton1Click:Connect(function()
+	local name = PetName.Text
+	local age = tonumber(Age.Text)
+	local weight = tonumber(Weight.Text)
+
+	if name ~= "" and age and weight then
+		Spawner.SpawnPet(name, weight, age)
+	else
+		warn("❌ Invalid input. Make sure all fields are filled correctly.")
+	end
+end)
+
+-- Minimize Button Functionality
 local minimized = false
 local originalSize = Frame.Size
 local minimizedSize = UDim2.new(0, 196, 0, 46)
 
-local alwaysVisible = {
-    MinimizedBtn,
-    Title
-}
+local alwaysVisible = {Title, MinimizedBtn}
 
 MinimizedBtn.MouseButton1Click:Connect(function()
-    minimized = not minimized
+	minimized = not minimized
 
-    if minimized then
-        Frame.Size = minimizedSize
-        for _, child in ipairs(Frame:GetChildren()) do
-            if child:IsA("GuiObject") and not table.find(alwaysVisible, child) then
-                child.Visible = false
-            end
-        end
-        MinimizedBtn.Text = "+"
-    else
-        Frame.Size = originalSize
-        for _, child in ipairs(Frame:GetChildren()) do
-            child.Visible = true
-        end
-        MinimizedBtn.Text = "-"
-    end
+	if minimized then
+		Frame.Size = minimizedSize
+		for _, child in ipairs(Frame:GetChildren()) do
+			if child:IsA("GuiObject") and not table.find(alwaysVisible, child) then
+				child.Visible = false
+			end
+		end
+		MinimizedBtn.Text = "+"
+	else
+		Frame.Size = originalSize
+		for _, child in ipairs(Frame:GetChildren()) do
+			child.Visible = true
+		end
+		MinimizedBtn.Text = "-"
+	end
 end)
