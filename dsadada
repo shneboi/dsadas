@@ -1,23 +1,26 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UICorner = Instance.new("UICorner")
-local MinimizedBtn = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local Age = Instance.new("TextBox")
-local UICorner_3 = Instance.new("UICorner")
-local Weight = Instance.new("TextBox")
-local UICorner_4 = Instance.new("UICorner")
-local SpawnBtn = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
 local Frame_2 = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
-local UICorner_7 = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local MinimizedBtn = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
 local PetName = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local Age = Instance.new("TextBox")
+local UICorner_6 = Instance.new("UICorner")
+local Weight = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local SpawnBtn = Instance.new("TextButton")
 local UICorner_8 = Instance.new("UICorner")
-local Frame_3 = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
 
 --Properties:
 
@@ -29,170 +32,161 @@ Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 3
-Frame.Position = UDim2.new(0.425531924, 0, 0.362478763, 0)
-Frame.Size = UDim2.new(0, 490, 0, 328)
+Frame.Position = UDim2.new(0.39255318, 0, 0.306451619, 0)
+Frame.Size = UDim2.new(0, 366, 0, 196)
+Frame.ZIndex = 12312
 Frame.Active = true
 Frame.Draggable = true
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, -0.00344827585, 0)
-TextLabel.Size = UDim2.new(0, 490, 0, 56)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "    Zenon Hub"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 26.000
-TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(85, 30, 31)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.0313036963, 0, 0.34313187, 0)
+Frame_2.Size = UDim2.new(0, 343, 0, 116)
+Frame_2.ZIndex = 0
 
-UICorner.CornerRadius = UDim.new(0, 20)
-UICorner.Parent = TextLabel
+UICorner.CornerRadius = UDim.new(0, 24)
+UICorner.Parent = Frame_2
+
+UICorner_2.CornerRadius = UDim.new(0, 26)
+UICorner_2.Parent = Frame
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BorderColor3 = Color3.fromRGB(170, 255, 255)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0313036963, 0, 0.0306122452, 0)
+Title.Size = UDim2.new(0, 343, 0, 46)
+Title.Font = Enum.Font.Creepster
+Title.Text = "    Zenon Hub 🍀"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextSize = 24.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_3.CornerRadius = UDim.new(0, 24)
+UICorner_3.Parent = Title
 
 MinimizedBtn.Name = "MinimizedBtn"
 MinimizedBtn.Parent = Frame
-MinimizedBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+MinimizedBtn.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
 MinimizedBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MinimizedBtn.BorderSizePixel = 3
-MinimizedBtn.Position = UDim2.new(0.902040839, 0, 0.0344827585, 0)
-MinimizedBtn.Size = UDim2.new(0, 35, 0, 35)
+MinimizedBtn.BorderSizePixel = 0
+MinimizedBtn.Position = UDim2.new(0.852459013, 0, 0.0816326514, 0)
+MinimizedBtn.Size = UDim2.new(0, 29, 0, 25)
 MinimizedBtn.Font = Enum.Font.SourceSans
 MinimizedBtn.Text = "-"
 MinimizedBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
 MinimizedBtn.TextSize = 50.000
 
-UICorner_2.Parent = MinimizedBtn
+UICorner_4.CornerRadius = UDim.new(0, 24)
+UICorner_4.Parent = MinimizedBtn
 
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.0612244904, 0, 0.18048881, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.Unknown
-TextLabel_2.Text = "Spawn Pets:"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 20.000
-TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
-
-Age.Name = "Age"
-Age.Parent = Frame
-Age.BackgroundColor3 = Color3.fromRGB(0, 145, 0)
-Age.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Age.BorderSizePixel = 0
-Age.Position = UDim2.new(0.581632674, 0, 0.390877396, 0)
-Age.Size = UDim2.new(0, 78, 0, 50)
-Age.Font = Enum.Font.FredokaOne
-Age.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-Age.PlaceholderText = "Age"
-Age.Text = ""
-Age.TextColor3 = Color3.fromRGB(255, 255, 255)
-Age.TextSize = 30.000
-
-UICorner_3.Parent = Age
-
-Weight.Name = "Weight"
-Weight.Parent = Frame
-Weight.BackgroundColor3 = Color3.fromRGB(0, 145, 0)
-Weight.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Weight.BorderSizePixel = 0
-Weight.Position = UDim2.new(0.779591858, 0, 0.390877396, 0)
-Weight.Size = UDim2.new(0, 78, 0, 50)
-Weight.Font = Enum.Font.FredokaOne
-Weight.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-Weight.PlaceholderText = "Weight"
-Weight.Text = ""
-Weight.TextColor3 = Color3.fromRGB(0, 0, 0)
-Weight.TextSize = 25.000
-
-UICorner_4.Parent = Weight
-
-SpawnBtn.Name = "SpawnBtn"
-SpawnBtn.Parent = Frame
-SpawnBtn.BackgroundColor3 = Color3.fromRGB(0, 145, 0)
-SpawnBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpawnBtn.BorderSizePixel = 0
-SpawnBtn.Position = UDim2.new(0.0612244904, 0, 0.671773553, 0)
-SpawnBtn.Size = UDim2.new(0, 430, 0, 50)
-SpawnBtn.Font = Enum.Font.FredokaOne
-SpawnBtn.Text = "SPAWN PET"
-SpawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-SpawnBtn.TextSize = 35.000
-SpawnBtn.TextStrokeColor3 = Color3.fromRGB(85, 170, 255)
-SpawnBtn.TextStrokeTransparency = 50.000
-
-UICorner_5.Parent = SpawnBtn
-
-Frame_2.Parent = Frame
-Frame_2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0.0285714287, 0, 0.332927704, 0)
-Frame_2.Size = UDim2.new(0, 462, 0, 201)
-Frame_2.ZIndex = 0
-Frame_2.Active = true
-Frame_2.Draggable = true
-
-UICorner_6.CornerRadius = UDim.new(0, 12)
-UICorner_6.Parent = Frame_2
-
-UICorner_7.CornerRadius = UDim.new(0, 26)
-UICorner_7.Parent = Frame
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0300546456, 0, 0.341836721, 0)
+TextLabel.Size = UDim2.new(0, 100, 0, 27)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "Spawn Pets:"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
 
 PetName.Name = "PetName"
 PetName.Parent = Frame
-PetName.BackgroundColor3 = Color3.fromRGB(0, 145, 0)
+PetName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PetName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PetName.BorderSizePixel = 0
-PetName.Position = UDim2.new(0.0612244904, 0, 0.390877396, 0)
-PetName.Size = UDim2.new(0, 235, 0, 50)
-PetName.Font = Enum.Font.FredokaOne
-PetName.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+PetName.Position = UDim2.new(0.0792349726, 0, 0.479591846, 0)
+PetName.Size = UDim2.new(0, 149, 0, 30)
+PetName.Font = Enum.Font.SourceSansBold
+PetName.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
 PetName.PlaceholderText = "Pet Name"
 PetName.Text = ""
 PetName.TextColor3 = Color3.fromRGB(0, 0, 0)
-PetName.TextSize = 30.000
-PetName.TextWrapped = true
+PetName.TextSize = 14.000
 
-UICorner_8.Parent = PetName
+UICorner_5.CornerRadius = UDim.new(0, 24)
+UICorner_5.Parent = PetName
 
-Frame_3.Parent = ScreenGui
-Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame_3.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_3.BorderSizePixel = 0
-Frame_3.Position = UDim2.new(0.425531924, 0, 0.362478763, 0)
-Frame_3.Size = UDim2.new(0, 504, 0, 345)
-Frame_3.ZIndex = 0
-Frame_3.Active = true
-Frame_3.Draggable = true
+Age.Name = "Age"
+Age.Parent = Frame
+Age.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Age.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Age.BorderSizePixel = 0
+Age.Position = UDim2.new(0.524590135, 0, 0.479591846, 0)
+Age.Size = UDim2.new(0, 61, 0, 30)
+Age.Font = Enum.Font.SourceSansBold
+Age.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+Age.PlaceholderText = "Age"
+Age.Text = ""
+Age.TextColor3 = Color3.fromRGB(0, 0, 0)
+Age.TextSize = 14.000
 
+UICorner_6.CornerRadius = UDim.new(0, 24)
+UICorner_6.Parent = Age
 
-UICorner_9.CornerRadius = UDim.new(0, 30)
-UICorner_9.Parent = Frame_3
+Weight.Name = "Weight"
+Weight.Parent = Frame
+Weight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Weight.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Weight.BorderSizePixel = 0
+Weight.Position = UDim2.new(0.732240438, 0, 0.479591846, 0)
+Weight.Size = UDim2.new(0, 61, 0, 30)
+Weight.Font = Enum.Font.SourceSansBold
+Weight.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+Weight.PlaceholderText = "Weight"
+Weight.Text = ""
+Weight.TextColor3 = Color3.fromRGB(0, 0, 0)
+Weight.TextSize = 14.000
 
--- UI Instances (your existing code)
-local ScreenGui = Instance.new("ScreenGui")
--- [keep everything as-is from your code above until the end...]
+UICorner_7.CornerRadius = UDim.new(0, 24)
+UICorner_7.Parent = Weight
 
--- Add this after all UI creation
-local Spawner = loadstring(game:HttpGet("https://codeberg.org/GrowAFilipino/GrowAGarden/raw/branch/main/Spawner.lua"))()
-if not Spawner then
-	warn("❌ Spawner module failed to load.")
-	return
-end
+SpawnBtn.Name = "SpawnBtn"
+SpawnBtn.Parent = Frame
+SpawnBtn.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+SpawnBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpawnBtn.BorderSizePixel = 0
+SpawnBtn.Position = UDim2.new(0.0792349726, 0, 0.683673441, 0)
+SpawnBtn.Size = UDim2.new(0, 300, 0, 33)
+SpawnBtn.Font = Enum.Font.FredokaOne
+SpawnBtn.Text = "SPAWN PET"
+SpawnBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpawnBtn.TextSize = 20.000
 
--- Function to handle Spawn button click
-SpawnBtn.MouseButton1Click:Connect(function()
-	local name = PetName.Text
-	local age = tonumber(Age.Text)
-	local weight = tonumber(Weight.Text)
+UICorner_8.CornerRadius = UDim.new(0, 24)
+UICorner_8.Parent = SpawnBtn
 
-	if name == "" or not age or not weight then
-		warn("❗ Please fill in all fields with valid values.")
-		return
+-- Minimize logic
+local minimized = false
+local originalSize = Frame.Size
+
+-- Elements to remain visible when minimized
+local alwaysVisible = {
+	MinimizedBtn,
+	Title
+}
+
+MinimizedBtn.MouseButton1Click:Connect(function()
+	minimized = not minimized
+
+	if minimized then
+		Frame.Size = UDim2.new(0, 366, 0, 60) -- minimized height
+		for _, child in ipairs(Frame:GetChildren()) do
+			if child:IsA("GuiObject") and not table.find(alwaysVisible, child) then
+				child.Visible = false
+			end
+		end
+		MinimizedBtn.Text = "+"
+	else
+		Frame.Size = originalSize
+		for _, child in ipairs(Frame:GetChildren()) do
+			child.Visible = true
+		end
+		MinimizedBtn.Text = "-"
 	end
-
-	Spawner.SpawnPet(name, weight, age)
 end)
