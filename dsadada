@@ -27,6 +27,8 @@ local PetName = Instance.new("TextBox")
 local Age = Instance.new("TextBox")
 local Weight = Instance.new("TextBox")
 local SpawnBtn = Instance.new("TextButton")
+local MinimizeButton = Instance.new("ImageButton")
+local UICorner_4 = Instance.new("UICorner")
 
 --Properties:
 
@@ -116,9 +118,6 @@ ExitBtn.Font = Enum.Font.Unknown
 ExitBtn.Text = "X"
 ExitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 ExitBtn.TextSize = 20.000
-ExitBtn.MouseButton1Click:Connect(function()
-	ScreenGui:Destroy()
-end)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(67, 34, 0)
@@ -206,3 +205,79 @@ SpawnBtn.MouseButton1Click:Connect(function()
 	-- Spawn the pet using the Spawner module
 	Spawner.SpawnPet(petName, weight, age)
 end)
+
+MinimizeButton.Name = "MinimizeButton"
+MinimizeButton.Parent = ScreenGui
+MinimizeButton.AnchorPoint = Vector2.new(1, 1)
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MinimizeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MinimizeButton.BorderSizePixel = 0
+MinimizeButton.Position = UDim2.new(1, -60, 1, -60)
+MinimizeButton.Size = UDim2.new(0, 50, 0, 50)
+MinimizeButton.Visible = false
+MinimizeButton.Image = "rbxassetid://104331485305229"
+
+UICorner_4.CornerRadius = UDim.new(1, 0)
+UICorner_4.Parent = MinimizeButton
+
+-- Scripts:
+
+local function TTSQ_fake_script() -- ExitBtn.LocalScript 
+	local script = Instance.new('LocalScript', ExitBtn)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.MinimizeButton.Visible = true
+	end)
+end
+coroutine.wrap(TTSQ_fake_script)()
+local function ZKHWMBS_fake_script() -- MinimizeButton.LocalScript 
+	local script = Instance.new('LocalScript', MinimizeButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Visible = false
+		script.Parent.Parent.Frame.Visible = true
+	end)
+	
+	local button = script.Parent
+	local UserInputService = game:GetService("UserInputService")
+	
+	local dragging = false
+	local dragInput
+	local dragStart
+	local startPos
+	
+	button.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = button.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	button.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			local delta = input.Position - dragStart
+			button.Position = UDim2.new(
+				startPos.X.Scale,
+				startPos.X.Offset + delta.X,
+				startPos.Y.Scale,
+				startPos.Y.Offset + delta.Y
+			)
+		end
+	end)
+	
+end
+coroutine.wrap(ZKHWMBS_fake_script)()
