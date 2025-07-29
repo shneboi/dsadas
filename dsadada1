@@ -222,7 +222,7 @@ UICorner_4.Parent = MinimizeButton
 
 -- Scripts:
 
-local function TTSQ_fake_script() -- ExitBtn.LocalScript 
+local function DHOJ_fake_script() -- ExitBtn.LocalScript 
 	local script = Instance.new('LocalScript', ExitBtn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -230,8 +230,8 @@ local function TTSQ_fake_script() -- ExitBtn.LocalScript
 		script.Parent.Parent.Parent.MinimizeButton.Visible = true
 	end)
 end
-coroutine.wrap(TTSQ_fake_script)()
-local function ZKHWMBS_fake_script() -- MinimizeButton.LocalScript 
+coroutine.wrap(DHOJ_fake_script)()
+local function QUWJAVJ_fake_script() -- MinimizeButton.LocalScript 
 	local script = Instance.new('LocalScript', MinimizeButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -247,8 +247,18 @@ local function ZKHWMBS_fake_script() -- MinimizeButton.LocalScript
 	local dragStart
 	local startPos
 	
+	local function update(input)
+		local delta = input.Position - dragStart
+		button.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
 	button.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			dragging = true
 			dragStart = input.Position
 			startPos = button.Position
@@ -262,22 +272,16 @@ local function ZKHWMBS_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 	button.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement then
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
 			dragInput = input
 		end
 	end)
 	
 	UserInputService.InputChanged:Connect(function(input)
 		if input == dragInput and dragging then
-			local delta = input.Position - dragStart
-			button.Position = UDim2.new(
-				startPos.X.Scale,
-				startPos.X.Offset + delta.X,
-				startPos.Y.Scale,
-				startPos.Y.Offset + delta.Y
-			)
+			update(input)
 		end
 	end)
 	
 end
-coroutine.wrap(ZKHWMBS_fake_script)()
+coroutine.wrap(QUWJAVJ_fake_script)()
