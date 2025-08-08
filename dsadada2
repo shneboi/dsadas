@@ -4,7 +4,6 @@
 -- Instances:
 -- Load Spawner Module
 local Spawner = loadstring(game:HttpGet("https://codeberg.org/darkdarkdark/roblox/raw/branch/main/Spawner.lua"))()
-
 if not Spawner then
 	warn("❌ Spawner failed to load.")
 	return
@@ -97,7 +96,7 @@ Title.BorderSizePixel = 40
 Title.Position = UDim2.new(0.0361111127, 0, 0.0199999996, 0)
 Title.Size = UDim2.new(0, 164, 0, 44)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "Grow a Garden"
+Title.Text = "Grow a Garden 🍓"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 25.000
 Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -136,6 +135,7 @@ ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Position = UDim2.new(0, 0, 0.25870648, 0)
 ScrollingFrame.Size = UDim2.new(0, 360, 0, 149)
+ScrollingFrame.CanvasPosition = Vector2.new(0, 153)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 2, -100)
 
 Frame_2.Parent = ScrollingFrame
@@ -270,7 +270,7 @@ Title2.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function BKMN_fake_script() -- MinimizeButton.LocalScript 
+local function CFKCYS_fake_script() -- MinimizeButton.LocalScript 
 	local script = Instance.new('LocalScript', MinimizeButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -323,8 +323,8 @@ local function BKMN_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(BKMN_fake_script)()
-local function TGKA_fake_script() -- Title.LocalScript 
+coroutine.wrap(CFKCYS_fake_script)()
+local function QMFBA_fake_script() -- Title.LocalScript 
 	local script = Instance.new('LocalScript', Title)
 
 	-- Put this in a LocalScript inside the TextLabel or TextButton
@@ -344,8 +344,8 @@ local function TGKA_fake_script() -- Title.LocalScript
 	end
 	
 end
-coroutine.wrap(TGKA_fake_script)()
-local function GOEYLF_fake_script() -- ExitBtn.LocalScript 
+coroutine.wrap(QMFBA_fake_script)()
+local function LDRQ_fake_script() -- ExitBtn.LocalScript 
 	local script = Instance.new('LocalScript', ExitBtn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -353,8 +353,8 @@ local function GOEYLF_fake_script() -- ExitBtn.LocalScript
 		script.Parent.Parent.Parent.MinimizeButton.Visible = true
 	end)          
 end
-coroutine.wrap(GOEYLF_fake_script)()
-local function NXGR_fake_script() -- Title3.LocalScript 
+coroutine.wrap(LDRQ_fake_script)()
+local function YJBKHLD_fake_script() -- Title3.LocalScript 
 	local script = Instance.new('LocalScript', Title3)
 
 	-- Put this in a LocalScript inside the TextLabel or TextButton
@@ -374,8 +374,8 @@ local function NXGR_fake_script() -- Title3.LocalScript
 	end
 	
 end
-coroutine.wrap(NXGR_fake_script)()
-local function CWXL_fake_script() -- Title2.LocalScript 
+coroutine.wrap(YJBKHLD_fake_script)()
+local function JNUADM_fake_script() -- Title2.LocalScript 
 	local script = Instance.new('LocalScript', Title2)
 
 	-- Put this in a LocalScript inside the TextLabel or TextButton
@@ -395,8 +395,8 @@ local function CWXL_fake_script() -- Title2.LocalScript
 	end
 	
 end
-coroutine.wrap(CWXL_fake_script)()
-local function XOLVQK_fake_script() -- ScrollingFrame.LocalScript 
+coroutine.wrap(JNUADM_fake_script)()
+local function YFBQDSW_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	-- LocalScript sa loob ng ScreenGui o Frame
@@ -443,4 +443,4 @@ local function XOLVQK_fake_script() -- ScrollingFrame.LocalScript
 	print("Hello world!")
 	
 end
-coroutine.wrap(XOLVQK_fake_script)()
+coroutine.wrap(YFBQDSW_fake_script)()
