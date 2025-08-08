@@ -1,4 +1,4 @@
--- Gui to Lua
+-- Gui to Lua (Updated with ScrollingFrame)
 -- Version: 3.2
 
 -- Instances:
@@ -11,7 +11,7 @@ if not Spawner then
 end
 
 local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
+local Frame = Instance.new("ScrollingFrame") -- Changed from Frame to ScrollingFrame
 local ImageLabel = Instance.new("ImageLabel")
 local UICorner = Instance.new("UICorner")
 local ImageLabel_2 = Instance.new("ImageLabel")
@@ -38,6 +38,7 @@ local UICorner_4 = Instance.new("UICorner")
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+-- ScrollingFrame Settings
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -48,15 +49,26 @@ Frame.Active = true
 Frame.Draggable = true
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 
+-- Scrolling Properties
+Frame.ScrollingDirection = Enum.ScrollingDirection.Y
+Frame.ScrollBarThickness = 8
+Frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+Frame.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+-- UIListLayout to auto-resize scroll area
+local listLayout = Instance.new("UIListLayout")
+listLayout.SortOrder = Enum.SortOrder.LayoutOrder
+listLayout.Padding = UDim.new(0, 0) -- no extra space between items
+listLayout.Parent = Frame
+
 ImageLabel.Parent = Frame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(115, 58, 0)
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0, 0, 0.101626985, 0)
 ImageLabel.Size = UDim2.new(0, 360, 0, 371)
 ImageLabel.Image = "rbxassetid://15910695828"
 ImageLabel.ScaleType = Enum.ScaleType.Tile
-ImageLabel.TileSize = UDim2.new(0.400000006, 0, 0.400000006, 0)
+ImageLabel.TileSize = UDim2.new(0.4, 0, 0.4, 0)
 
 UICorner.CornerRadius = UDim.new(0, 11)
 UICorner.Parent = ImageLabel
@@ -68,7 +80,7 @@ ImageLabel_2.BorderSizePixel = 0
 ImageLabel_2.Size = UDim2.new(0, 360, 0, 52)
 ImageLabel_2.Image = "rbxassetid://15910695828"
 ImageLabel_2.ScaleType = Enum.ScaleType.Tile
-ImageLabel_2.TileSize = UDim2.new(0.400000006, 0, 2, 0)
+ImageLabel_2.TileSize = UDim2.new(0.4, 0, 2, 0)
 
 UICorner_2.CornerRadius = UDim.new(0, 11)
 UICorner_2.Parent = ImageLabel_2
@@ -77,27 +89,22 @@ ImageLabel_3.Parent = Frame
 ImageLabel_3.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel_3.BorderSizePixel = 0
-ImageLabel_3.Position = UDim2.new(0, 0, 0.012628804, 0)
 ImageLabel_3.Size = UDim2.new(0, 360, 0, 50)
 ImageLabel_3.Image = "rbxassetid://15910695828"
 ImageLabel_3.ScaleType = Enum.ScaleType.Tile
-ImageLabel_3.TileSize = UDim2.new(0.400000006, 0, 2, 0)
+ImageLabel_3.TileSize = UDim2.new(0.4, 0, 2, 0)
 
 UICorner_3.CornerRadius = UDim.new(0, 11)
 UICorner_3.Parent = Frame
 
 Title.Name = "Title"
 Title.Parent = Frame
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Title.BorderSizePixel = 0
-Title.Position = UDim2.new(0.0361111127, 0, 0.0199999996, 0)
+Title.BackgroundTransparency = 1
 Title.Size = UDim2.new(0, 164, 0, 44)
 Title.Font = Enum.Font.FredokaOne
 Title.Text = "Gr🍓w a Garden"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 25.000
+Title.TextSize = 25
 Title.TextXAlignment = Enum.TextXAlignment.Left
 
 ExitBtn.Name = "ExitBtn"
@@ -105,98 +112,77 @@ ExitBtn.Parent = Frame
 ExitBtn.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
 ExitBtn.BorderColor3 = Color3.fromRGB(136, 37, 37)
 ExitBtn.BorderSizePixel = 3
-ExitBtn.Position = UDim2.new(0.877777755, 0, 0.040773958, 0)
 ExitBtn.Size = UDim2.new(0, 32, 0, 24)
 ExitBtn.Font = Enum.Font.Unknown
 ExitBtn.Text = "X"
 ExitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExitBtn.TextSize = 20.000
+ExitBtn.TextSize = 20
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(67, 34, 0)
 Frame_2.BorderColor3 = Color3.fromRGB(45, 23, 0)
 Frame_2.BorderSizePixel = 3
-Frame_2.Position = UDim2.new(0.0361111127, 0, 0.220237941, 0)
 Frame_2.Size = UDim2.new(0, 335, 0, 111)
 
-Title2.Name = "Title2"
 Title2.Parent = Frame
-Title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title2.BackgroundTransparency = 1.000
-Title2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Title2.BorderSizePixel = 0
-Title2.Position = UDim2.new(0.0222222228, 0, 0.127388701, 0)
+Title2.BackgroundTransparency = 1
 Title2.Size = UDim2.new(0, 192, 0, 44)
 Title2.Font = Enum.Font.FredokaOne
 Title2.Text = "Pet Spawner:"
 Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title2.TextSize = 16.000
+Title2.TextSize = 16
 Title2.TextXAlignment = Enum.TextXAlignment.Left
 
-PetName.Name = "PetName"
 PetName.Parent = Frame
 PetName.BackgroundColor3 = Color3.fromRGB(140, 84, 52)
 PetName.BorderColor3 = Color3.fromRGB(52, 26, 0)
 PetName.BorderSizePixel = 3
-PetName.Position = UDim2.new(0.088888891, 0, 0.254945636, 0)
 PetName.Size = UDim2.new(0, 143, 0, 34)
 PetName.Font = Enum.Font.FredokaOne
 PetName.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 PetName.PlaceholderText = "Pet Name"
-PetName.Text = ""
 PetName.TextColor3 = Color3.fromRGB(0, 0, 0)
-PetName.TextSize = 14.000
+PetName.TextSize = 14
 
-Age.Name = "Age"
 Age.Parent = Frame
 Age.BackgroundColor3 = Color3.fromRGB(140, 84, 52)
 Age.BorderColor3 = Color3.fromRGB(52, 26, 0)
 Age.BorderSizePixel = 3
-Age.Position = UDim2.new(0.555555582, 0, 0.254945636, 0)
 Age.Size = UDim2.new(0, 52, 0, 34)
 Age.Font = Enum.Font.FredokaOne
 Age.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 Age.PlaceholderText = "Age"
-Age.Text = ""
 Age.TextColor3 = Color3.fromRGB(0, 0, 0)
-Age.TextSize = 14.000
+Age.TextSize = 14
 
-Weight.Name = "Weight"
 Weight.Parent = Frame
 Weight.BackgroundColor3 = Color3.fromRGB(140, 84, 52)
 Weight.BorderColor3 = Color3.fromRGB(52, 26, 0)
 Weight.BorderSizePixel = 3
-Weight.Position = UDim2.new(0.780555546, 0, 0.254945636, 0)
 Weight.Size = UDim2.new(0, 52, 0, 34)
 Weight.Font = Enum.Font.FredokaOne
 Weight.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 Weight.PlaceholderText = "Weight"
-Weight.Text = ""
 Weight.TextColor3 = Color3.fromRGB(0, 0, 0)
-Weight.TextSize = 14.000
+Weight.TextSize = 14
 
-SpawnBtn.Name = "SpawnBtn"
 SpawnBtn.Parent = Frame
 SpawnBtn.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 SpawnBtn.BorderColor3 = Color3.fromRGB(113, 255, 42)
 SpawnBtn.BorderSizePixel = 2
-SpawnBtn.Position = UDim2.new(0.088888891, 0, 0.370131731, 0)
 SpawnBtn.Size = UDim2.new(0, 299, 0, 36)
 SpawnBtn.Font = Enum.Font.FredokaOne
 SpawnBtn.Text = "SPAWN PET"
 SpawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-SpawnBtn.TextSize = 20.000
+SpawnBtn.TextSize = 20
 SpawnBtn.MouseButton1Click:Connect(function()
 	local petName = PetName.Text
 	local weight = tonumber(Weight.Text)
 	local age = tonumber(Age.Text)
-
 	if petName == "" or not weight or not age then
 		warn("⚠️ Please fill in all fields with valid values.")
 		return
 	end
-
-	-- Spawn the pet using the Spawner module
 	Spawner.SpawnPet(petName, weight, age)
 end)
 
@@ -204,52 +190,41 @@ Frame_3.Parent = Frame
 Frame_3.BackgroundColor3 = Color3.fromRGB(67, 34, 0)
 Frame_3.BorderColor3 = Color3.fromRGB(45, 23, 0)
 Frame_3.BorderSizePixel = 3
-Frame_3.Position = UDim2.new(0.0333333351, 0, 0.608444333, 0)
 Frame_3.Size = UDim2.new(0, 335, 0, 145)
 
-Title3.Name = "Title3"
 Title3.Parent = Frame
-Title3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title3.BackgroundTransparency = 1.000
-Title3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Title3.BorderSizePixel = 0
-Title3.Position = UDim2.new(0.0194444451, 0, 0.491024971, 0)
+Title3.BackgroundTransparency = 1
 Title3.Size = UDim2.new(0, 192, 0, 44)
 Title3.Font = Enum.Font.FredokaOne
 Title3.Text = "Freeze Trade:"
 Title3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title3.TextSize = 16.000
+Title3.TextSize = 16
 Title3.TextXAlignment = Enum.TextXAlignment.Left
 
-AutoAcceptBtn.Name = "AutoAcceptBtn"
 AutoAcceptBtn.Parent = Frame
 AutoAcceptBtn.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 AutoAcceptBtn.BorderColor3 = Color3.fromRGB(113, 255, 42)
 AutoAcceptBtn.BorderSizePixel = 2
-AutoAcceptBtn.Position = UDim2.new(0.0861111134, 0, 0.819763184, 0)
 AutoAcceptBtn.Size = UDim2.new(0, 299, 0, 36)
 AutoAcceptBtn.Font = Enum.Font.FredokaOne
 AutoAcceptBtn.Text = "Auto Accept  (OFF)"
 AutoAcceptBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-AutoAcceptBtn.TextSize = 20.000
+AutoAcceptBtn.TextSize = 20
 
-FreezeTradeBtn.Name = "FreezeTradeBtn"
 FreezeTradeBtn.Parent = Frame
 FreezeTradeBtn.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 FreezeTradeBtn.BorderColor3 = Color3.fromRGB(113, 255, 42)
 FreezeTradeBtn.BorderSizePixel = 2
-FreezeTradeBtn.Position = UDim2.new(0.0861111134, 0, 0.66742903, 0)
 FreezeTradeBtn.Size = UDim2.new(0, 299, 0, 36)
 FreezeTradeBtn.Font = Enum.Font.FredokaOne
 FreezeTradeBtn.Text = "Freeze Trade (OFF)"
 FreezeTradeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-FreezeTradeBtn.TextSize = 20.000
+FreezeTradeBtn.TextSize = 20
 
 MinimizeButton.Name = "MinimizeButton"
 MinimizeButton.Parent = ScreenGui
 MinimizeButton.AnchorPoint = Vector2.new(1, 1)
 MinimizeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MinimizeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MinimizeButton.BorderSizePixel = 0
 MinimizeButton.Position = UDim2.new(1, -60, 1, -60)
 MinimizeButton.Size = UDim2.new(0, 50, 0, 50)
@@ -259,7 +234,7 @@ MinimizeButton.Image = "rbxassetid://104331485305229"
 UICorner_4.CornerRadius = UDim.new(1, 0)
 UICorner_4.Parent = MinimizeButton
 
--- Scripts:
+--- Scripts:
 
 local function NSKKCK_fake_script() -- ExitBtn.LocalScript 
 	local script = Instance.new('LocalScript', ExitBtn)
