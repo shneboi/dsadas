@@ -3,11 +3,6 @@
 
 -- Instances:
 -- Load Spawner Module
-local Spawner = loadstring(game:HttpGet("https://codeberg.org/darkdarkdark/roblox/raw/branch/main/Spawner.lua"))()
-if not Spawner then
-	warn("❌ Spawner failed to load.")
-	return
-end
 
 local ScreenGui = Instance.new("ScreenGui")
 local MinimizeButton = Instance.new("ImageButton")
@@ -163,16 +158,6 @@ SpawnBtn.Font = Enum.Font.FredokaOne
 SpawnBtn.Text = "SPAWN PET"
 SpawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 SpawnBtn.TextSize = 20.000
-SpawnBtn.MouseButton1Click:Connect(function()
-	local petName = PetName.Text
-	local weight = tonumber(Weight.Text)
-	local age = tonumber(Age.Text)
-	if petName == "" or not weight or not age then
-		warn("⚠️ Please fill in all fields with valid values.")
-		return
-	end
-	Spawner.SpawnPet(petName, weight, age)
-end)
 
 Age.Name = "Age"
 Age.Parent = ScrollingFrame
