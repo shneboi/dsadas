@@ -67,7 +67,7 @@ ImageLabel.Parent = Frame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
-ImageLabel.Size = UDim2.new(0, 360, 0, 52)
+ImageLabel.Size = UDim2.new(0, 360, 0, 48)
 ImageLabel.Image = "rbxassetid://15910695828"
 ImageLabel.ScaleType = Enum.ScaleType.Tile
 ImageLabel.TileSize = UDim2.new(0.400000006, 0, 2, 0)
@@ -79,8 +79,8 @@ ImageLabel_2.Parent = Frame
 ImageLabel_2.BackgroundColor3 = Color3.fromRGB(74, 167, 28)
 ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel_2.BorderSizePixel = 0
-ImageLabel_2.Position = UDim2.new(0, 0, 0.012628804, 0)
-ImageLabel_2.Size = UDim2.new(0, 360, 0, 50)
+ImageLabel_2.Position = UDim2.new(0, 0, 0.0251543801, 0)
+ImageLabel_2.Size = UDim2.new(0, 360, 0, 43)
 ImageLabel_2.Image = "rbxassetid://15910695828"
 ImageLabel_2.ScaleType = Enum.ScaleType.Tile
 ImageLabel_2.TileSize = UDim2.new(0.400000006, 0, 2, 0)
@@ -92,8 +92,8 @@ Title.Name = "Title"
 Title.Parent = Frame
 Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Title.BackgroundTransparency = 1.000
-Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Title.BorderSizePixel = 0
+Title.BorderColor3 = Color3.fromRGB(0, 85, 127)
+Title.BorderSizePixel = 40
 Title.Position = UDim2.new(0.0361111127, 0, 0.0199999996, 0)
 Title.Size = UDim2.new(0, 164, 0, 44)
 Title.Font = Enum.Font.FredokaOne
@@ -107,12 +107,12 @@ ExitBtn.Parent = Frame
 ExitBtn.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
 ExitBtn.BorderColor3 = Color3.fromRGB(136, 37, 37)
 ExitBtn.BorderSizePixel = 3
-ExitBtn.Position = UDim2.new(0.877777755, 0, 0.040773958, 0)
+ExitBtn.Position = UDim2.new(0.872222245, 0, 0.0656495392, 0)
 ExitBtn.Size = UDim2.new(0, 32, 0, 24)
 ExitBtn.Font = Enum.Font.Unknown
-ExitBtn.Text = "X"
+ExitBtn.Text = "×"
 ExitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExitBtn.TextSize = 20.000
+ExitBtn.TextSize = 26.000
 
 ImageLabel_3.Parent = Frame
 ImageLabel_3.BackgroundColor3 = Color3.fromRGB(115, 58, 0)
@@ -271,7 +271,7 @@ Title2.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function KDTSSS_fake_script() -- MinimizeButton.LocalScript 
+local function JQDAXS_fake_script() -- MinimizeButton.LocalScript 
 	local script = Instance.new('LocalScript', MinimizeButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -324,8 +324,8 @@ local function KDTSSS_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(KDTSSS_fake_script)()
-local function ERHMF_fake_script() -- ExitBtn.LocalScript 
+coroutine.wrap(JQDAXS_fake_script)()
+local function OQDLU_fake_script() -- ExitBtn.LocalScript 
 	local script = Instance.new('LocalScript', ExitBtn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -333,8 +333,8 @@ local function ERHMF_fake_script() -- ExitBtn.LocalScript
 		script.Parent.Parent.Parent.MinimizeButton.Visible = true
 	end)          
 end
-coroutine.wrap(ERHMF_fake_script)()
-local function UWPJL_fake_script() -- ScrollingFrame.LocalScript 
+coroutine.wrap(OQDLU_fake_script)()
+local function HIRP_fake_script() -- ScrollingFrame.LocalScript 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	-- LocalScript sa loob ng ScreenGui o Frame
@@ -381,4 +381,4 @@ local function UWPJL_fake_script() -- ScrollingFrame.LocalScript
 	print("Hello world!")
 	
 end
-coroutine.wrap(UWPJL_fake_script)()
+coroutine.wrap(HIRP_fake_script)()
