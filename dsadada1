@@ -1,3 +1,8 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+-- Load Spawner Module
 local Spawner = loadstring(game:HttpGet("https://codeberg.org/darkdarkdark/roblox/raw/branch/main/Spawner.lua"))()
 
 if not Spawner then
@@ -181,17 +186,18 @@ SpawnBtn.Font = Enum.Font.FredokaOne
 SpawnBtn.Text = "SPAWN PET"
 SpawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 SpawnBtn.TextSize = 20.000
-local petName = PetName.Text
-local weight = tonumber(Weight.Text)
-local age = tonumber(Age.Text)
+SpawnBtn.MouseButton1Click:Connect(function()
+	local petName = PetName.Text
+	local weight = tonumber(Weight.Text)
+	local age = tonumber(Age.Text)
 
-if petName == "" or not weight or not age then
-	warn("⚠️ Please fill in all fields with valid values.")
-	return
-end
+	if petName == "" or not weight or not age then
+		warn("⚠️ Please fill in all fields with valid values.")
+		return
+	end
 
--- Spawn the pet using the Spawner module
-Spawner.SpawnPet(petName, weight, age)
+	-- Spawn the pet using the Spawner module
+	Spawner.SpawnPet(petName, weight, age)
 end)
 
 Frame_3.Parent = Frame
