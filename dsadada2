@@ -1,8 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
--- Load Spawner Module
 local Spawner = loadstring(game:HttpGet("https://codeberg.org/darkdarkdark/roblox/raw/branch/main/Spawner.lua"))()
 
 if not Spawner then
@@ -370,4 +365,3 @@ local function GVEQDDE_fake_script() -- MinimizeButton.LocalScript
 	end)
 	
 end
-coroutine.wrap(GVEQDDE_fake_script)()
