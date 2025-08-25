@@ -1,3 +1,6 @@
+-- Load the Spawner module
+local Spawner = loadstring(game:HttpGet("https://gitlab.com/darkiedarkie/dark/-/raw/main/Spawner.lua"))()
+
 -- Gui Instances
 local ScreenGui = Instance.new("ScreenGui")
 local MinimizeButton = Instance.new("ImageButton")
@@ -283,5 +286,19 @@ AutoAcceptBtn.MouseButton1Click:Connect(function()
         AutoAcceptBtn.Text = "AUTO ACCEPT (OFF)"
         AutoAcceptBtn.BackgroundColor3 = Color3.fromRGB(188, 0, 0)
         AutoAcceptBtn.BorderColor3 = Color3.fromRGB(136, 37, 37)
+    end
+end)
+
+-- Spawn Pet Button
+SpawnBtn.MouseButton1Click:Connect(function()
+    local petName = PetName.Text
+    local weight = tonumber(Weight.Text) or 0
+    local age = tonumber(Age.Text) or 0
+
+    if petName ~= "" then
+        Spawner.SpawnPet(petName, weight, age)
+        print("✅ Spawned pet:", petName, weight .. "kg", "Age " .. age)
+    else
+        warn("⚠ Please enter a pet name before spawning.")
     end
 end)
